@@ -1,4 +1,9 @@
+import "./App.css";
 import styled from "styled-components";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+
+import NavBar from "./components/NavBar";
+import SignUp from "./pages/Signup";
 
 const Title = styled.h1`
   color: palevioletred;
@@ -7,15 +12,15 @@ const Title = styled.h1`
   border-radius: 3px;
 `;
 
-const Background = styled.div`
-  background: grey;
-`
-
 const App = () => {
   return (
-    <Background>
-      <Title>React</Title>
-    </Background>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

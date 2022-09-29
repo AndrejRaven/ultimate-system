@@ -1,0 +1,10 @@
+@font-face {
+  font-family: FiraFans;
+  src: url(/src/fonts/fira-sans-font/FiraSans-Regular.otf);
+}
+
+body {
+  background-color: lightgray;
+  margin: 0;
+  font-family: 'FiraFans', Helvetica, sans-serif;
+}
