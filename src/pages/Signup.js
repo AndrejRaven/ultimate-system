@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import Input from "../components/Input";
-import email from '../icons/email.svg'
-import password from '../icons/password.svg'
+import { Button } from "../components/Button"
+import { Form } from "../components/Form";
 
 const Background = styled.div`
-  min-height: calc(100vh - 3.5rem);
   display: flex;
   justify-content: center;
   padding-top: 2em;
@@ -15,6 +14,7 @@ const Paper = styled.div`
   background-color: white;
   border-radius: 2%;
   text-align: center;
+  padding-bottom: 3rem;
 `
 
 const SignUp = () => {
@@ -22,11 +22,12 @@ const SignUp = () => {
     <Background>
       <Paper>
         <h1>Zaczynamy!</h1>
-        <form style={{ display: 'flex', flexDirection: 'column'}}>
+        <Form style={{ }}>
           <Input type='email' placeholder='Please enter your email' label='E-mail' />
           <Input type='password' placeholder='Minimum 8 znaków' label='Hasło' />
           <Input type='password' placeholder='Minimum 8 znaków' label='Powtórz hasło' />
-        </form>
+          <Button style={{ marginTop: '3rem'}}>Zarejestruj się</Button>
+        </Form>
       </Paper>
     </Background>
   );
