@@ -4,20 +4,21 @@ import { Form } from "../components/Form";
 import { Background } from "../components/CentrifyBackground";
 import { Paper } from '../components/Paper';
 
-const SignUp = () => {
+
+
+const SignIn = () => {
   return (
     <Background>
       <Paper>
-        <h1>Zaczynamy!</h1>
+        <h1>Logowanie</h1>
         <Form>
           <Input type='email' placeholder='Please enter your email' label='E-mail' />
           <Input type='password' placeholder='Minimum 8 znaków' label='Hasło' />
-          <Input type='password' placeholder='Minimum 8 znaków' label='Powtórz hasło' />
-          <Button style={{ marginTop: '3rem'}}>Zarejestruj się</Button>
+          <Button style={{ marginTop: '3rem'}}>Zaloguj się</Button>
         </Form>
       </Paper>
     </Background>
   );
 };
 
-export default SignUp;
+export default SignIn;

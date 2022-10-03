@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Container from "./Container";
+import { Container } from "./Container";
 
 const Nav = styled.div`
   background-color: grey;
@@ -14,6 +14,7 @@ const Bar = styled.nav`
 const StyledLink = styled(Link)`
   text-decoration: none;
   margin: 0 0.5rem;
+  color: #293672;
 `
 
 const NavBar = ({ loggedIn }) => {

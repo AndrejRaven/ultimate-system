@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
+import { SecondaryButton as Button } from "./Button";
 
 const StyledInput = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ const StyledInput = styled.div`
     top: 60%;
     transform: translateY(-50%);
     svg {
-      fill: black;
+      fill: #a4a4a4;
       transition: 0.3s;
     }
   }
@@ -28,7 +29,7 @@ const InputField = styled.input`
   height: 50px;
   font-size: 0.8rem;
   width: 100%;
-  border: 2px solid #aaa;
+  border: 2px solid #a4a4a4;
   border-radius: 4px;
   margin: 8px 0;
   outline: none;
@@ -38,18 +39,34 @@ const InputField = styled.input`
   padding-left: 50px;
 
   &:focus {
-    border-color: dodgerBlue;
-    box-shadow: 0 0 8px 0 dodgerBlue;
+    border-color: #293672;
+    box-shadow: 0 0 8px 0 #293672;
   }
 
   :focus + .left-icon {
     svg {
-      fill: dodgerBlue;
+      fill: #293672;
     }
   }
 `;
 
-const Input = ({ type, label, placeholder }) => {
+const InputFieldTwo = styled.input`
+  width: 100%;
+  min-width: 200px;
+  border: 2px solid #a4a4a4;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 0.7rem;
+  box-sizing: border-box;
+  transition: 0.3s;
+  &:focus {
+    border-color: #293672;
+    box-shadow: 0 0 8px 0 #293672;
+  }
+`;
+
+export const InputWithIcon = ({ type, label, placeholder }) => {
   return (
     <StyledInput className="inputWithIcon">
       <label>{label}</label>
@@ -70,4 +87,11 @@ const Input = ({ type, label, placeholder }) => {
   );
 };
 
-export default Input;
+export const InputWithButton = ({type, placeholder, buttonText}) => {
+  return (
+    <StyledInput style={{ flexDirection: 'row'}}>
+      <InputFieldTwo type={type} placeholder={placeholder} />
+      <Button style={{ margin: '0.5rem 0 0.5rem -1rem'}}>{buttonText}</Button>
+    </StyledInput>
+  )
+}

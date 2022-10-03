@@ -4,6 +4,8 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import SignUp from "./pages/Signup";
+import SignIn from "./pages/Signin";
+import Main from "./pages/MainPage";
 
 const Title = styled.h1`
   color: palevioletred;
@@ -17,7 +19,9 @@ const App = () => {
     <BrowserRouter>
       <NavBar />
       <Routes>
+        <Route path="/" element={<Main />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/sign-in" element={<SignIn />} />
         <Route />
       </Routes>
     </BrowserRouter>
