@@ -11,9 +11,9 @@ const SignUp = () => {
         <h1>Zaczynamy!</h1>
         <Form>
           <Input type='email' placeholder='Please enter your email' label='E-mail' />
-          <Input type='password' placeholder='Minimum 8 znaków' label='Hasło' />
-          <Input type='password' placeholder='Minimum 8 znaków' label='Powtórz hasło' />
-          <Button style={{ marginTop: '3rem'}}>Zarejestruj się</Button>
+          <Input autocomplete="new-password" type='password' placeholder='Minimum 8 znaków' label='Hasło' />
+          <Input autocomplete="new-password" type='password' placeholder='Minimum 8 znaków' label='Powtórz hasło' />
+          <Button fullWidth variant='primary' style={{ marginTop: '3rem'}}>Zarejestruj się</Button>
         </Form>
       </Paper>
     </Background>

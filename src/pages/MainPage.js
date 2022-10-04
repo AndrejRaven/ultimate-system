@@ -2,10 +2,12 @@ import styled from "styled-components";
 import { Container } from "../components/Container";
 import { InputWithButton as Input } from "../components/Input";
 import { Paper } from "../components/Paper";
-import { Table } from "../components/Table"
+import { Table, Row, Col } from "../components/Table";
 import { SecondaryButton as Button } from "../components/Button";
 import { Pagination } from "../components/Pagination";
-import ModalOverlay from '../components/Modal'
+import ModalOverlay from "../components/Modal";
+import ModalEditProfile from "../components/ModalEditProfile";
+import { useState } from "react";
 
 const Bar = styled.nav`
   display: flex;
@@ -14,88 +16,98 @@ const Bar = styled.nav`
 `;
 
 const Main = () => {
+  const [isOpen, setIsOpen ] = useState(false)
+
+  const handleOpenModal = (e) => {
+    e.preventDefault()
+    setIsOpen(true)
+  }
+
+
   return (
     <Container>
-      <ModalOverlay>
-        <h2>Heell</h2>
-      </ModalOverlay>
-      <Paper style={{ marginTop: '5rem'}}>
-        <Bar style={{ marginLeft: '2rem'}}>
+      {isOpen &&<ModalOverlay>
+        <ModalEditProfile setIsOpen={setIsOpen} />
+      </ModalOverlay>}
+      <Paper style={{ marginTop: "5rem" }}>
+        <Bar style={{ marginLeft: "2rem" }}>
           <div>
-            <Input placeholder="Filtruj po imię, nazwisko" type="text" buttonText="Szukaj"/>
+            <Input
+              placeholder="Filtruj po imię, nazwisko"
+              type="text"
+              buttonText="Szukaj"
+            />
           </div>
-          <Bar style={{margin: '0.5rem', marginRight: '5rem'}}>
+          <Bar style={{ margin: "0.5rem", marginRight: "5rem" }}>
             <Button>Wszyscy</Button>
             <Button>Aktywni</Button>
             <Button>Nieaktywni</Button>
           </Bar>
         </Bar>
       </Paper>
-      <div style={{ display: 'flex', justifyContent: 'right', marginTop: '30px'}}>
-        <Button>Edytuj swoje konto</Button>
+      <div
+        style={{ display: "flex", justifyContent: "right", marginTop: "30px" }}
+      >
+        <Button style={{ maxWidth: "250px" }} onClick={handleOpenModal}>Edytuj swoje konto</Button>
       </div>
       <Table>
         <thead>
           <tr>
-            <td></td>
-            <td>
-              <h5>Imię</h5>
-            </td>
-            <td>
-              <h5>Nazwisko</h5>
-            </td>
-            <td>
-              <h5>E-mail</h5>
-            </td>
-            <td>
-              <h5>Data urodzenia</h5>
-            </td>
+            <Col></Col>
+            <Col>Imię</Col>
+            <Col>Nazwisko</Col>
+            <Col>E-mail</Col>
+            <Col>Data urodzenia</Col>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><p className="icon">RW</p></td>
-            <td>Roman</td>
-            <td>Wasio</td>
-            <td>romanwasio@mail.pl</td>
-            <td>17.04.1994</td>
-          </tr>
-          <tr>
-            <td>Icon</td>
-            <td>Roman Wasio</td>
-            <td>Roman Wasio</td>
-            <td>Roman Wasio</td>
-            <td>Roman Wasio</td>
-          </tr>
-          <tr>
-            <td>Icon</td>
-            <td>Roman Wasio</td>
-            <td>Roman Wasio</td>
-            <td>Roman Wasio</td>
-            <td>Roman Wasio</td>
-          </tr>
-          <tr>
-            <td>Icon</td>
-            <td>Roman Wasio</td>
-            <td>Roman Wasio</td>
-            <td>Roman Wasio</td>
-            <td>Roman Wasio</td>
-          </tr>
-          <tr>
-            <td>Icon</td>
-            <td>Roman Wasio</td>
-            <td>Roman Wasio</td>
-            <td>Roman Wasio</td>
-            <td>Roman Wasio</td>
-          </tr>
+          <Row>
+            <Col>
+              <div className="icon">
+                <p>RW</p>
+              </div>
+            </Col>
+            <Col>Roman</Col>
+            <Col>Wasio</Col>
+            <Col>romanwasio@mail.pl</Col>
+            <Col>17.04.1994</Col>
+          </Row>
+          <Row>
+            <Col>Icon</Col>
+            <Col>Roman Wasio</Col>
+            <Col>Roman Wasio</Col>
+            <Col>Roman Wasio</Col>
+            <Col>Roman Wasio</Col>
+          </Row>
+          <Row>
+            <Col>Icon</Col>
+            <Col>Roman Wasio</Col>
+            <Col>Roman Wasio</Col>
+            <Col>Roman Wasio</Col>
+            <Col>Roman Wasio</Col>
+          </Row>
+          <Row>
+            <Col>Icon</Col>
+            <Col>Roman Wasio</Col>
+            <Col>Roman Wasio</Col>
+            <Col>Roman Wasio</Col>
+            <Col>Roman Wasio</Col>
+          </Row>
+          <Row>
+            <Col>Icon</Col>
+            <Col>Roman Wasio</Col>
+            <Col>Roman Wasio</Col>
+            <Col>Roman Wasio</Col>
+            <Col>Roman Wasio</Col>
+          </Row>
         </tbody>
       </Table>
       <Pagination>
-        <div className="active">1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>...</div>
-        <div>12</div>
+        <div className="active"><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+        <div><p>...</p></div>
+        <div><p>12</p></div>
       </Pagination>
     </Container>
   );

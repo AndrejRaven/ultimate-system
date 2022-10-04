@@ -12,9 +12,9 @@ const SignIn = () => {
       <Paper>
         <h1>Logowanie</h1>
         <Form>
-          <Input type='email' placeholder='Please enter your email' label='E-mail' />
-          <Input type='password' placeholder='Minimum 8 znaków' label='Hasło' />
-          <Button style={{ marginTop: '3rem'}}>Zaloguj się</Button>
+          <Input autocomplete="mail" type='email' placeholder='Please enter your email' label='E-mail' />
+          <Input autocomplete="current-password" type='password' placeholder='Minimum 8 znaków' label='Hasło' />
+          <Button fullWidth style={{ marginTop: '3rem'}}>Zaloguj się</Button>
         </Form>
       </Paper>
     </Background>

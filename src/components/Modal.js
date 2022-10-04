@@ -11,7 +11,7 @@ const Modal = styled.div`
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 8px;
-  button {
+  .close-icon {
     position: absolute;
     right: -10px;
     top: -10px;
@@ -32,7 +32,6 @@ const ModalOverlay = (props) => {
   const content = (
     <Backdrop>
       <Modal>
-        <button>X</button>
         {props.children}
       </Modal>
     </Backdrop>
