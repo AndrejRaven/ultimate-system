@@ -69,11 +69,11 @@ const InputFieldTwo = styled.input`
   }
 `;
 
-export const InputWithIcon = ({ type, label, placeholder, autocomplete }) => {
+export const InputWithIcon = ({ type, label, placeholder, autocomplete, setValue }) => {
   return (
     <StyledInput className="inputWithIcon">
       <label>{label}</label>
-      <InputField autoComplete={autocomplete} type={type} placeholder={placeholder} />
+      <InputField autoComplete={autocomplete} type={type} placeholder={placeholder} onChange={e => setValue(e.target.value)} />
       <div className="left-icon">
         {type !== "password" ? (
           <svg

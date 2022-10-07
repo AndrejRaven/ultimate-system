@@ -1,16 +1,12 @@
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import Backdrop from "./Backdrop";
+import { Background } from "./CentrifyBackground";
 
 const Modal = styled.div`
   z-index: 100;
   position: fixed;
   top: 22vh;
-  left: 10%;
-  width: 80%;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 8px;
   .close-icon {
     position: absolute;
     right: -10px;
@@ -31,9 +27,7 @@ const Modal = styled.div`
 const ModalOverlay = (props) => {
   const content = (
     <Backdrop>
-      <Modal>
-        {props.children}
-      </Modal>
+        <Modal>{props.children}</Modal>
     </Backdrop>
   );
   return ReactDOM.createPortal(content, document.getElementById("modal-hook"));

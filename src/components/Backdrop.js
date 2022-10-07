@@ -9,6 +9,9 @@ const Background = styled.div`
   height: 100vh;
   background: rgba(0, 0, 0, 0.75);
   z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Backdrop = (props) => {
